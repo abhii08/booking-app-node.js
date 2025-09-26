@@ -35,7 +35,7 @@ const SeatsInput = ({
       }`}
       id={`${index}text`}
       onClick={() => {
-        handleChecked(text, index);
+        handleChecked(text);
       }}
     >
       <span>{text}</span>

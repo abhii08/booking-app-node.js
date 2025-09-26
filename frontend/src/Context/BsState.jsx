@@ -85,7 +85,17 @@ const BsState = (props) => {
     //getting movies, slot and seats from localstorage and updating state (useful when page refreshes)
     const movie = window.localStorage.getItem("movie");
     const slot = window.localStorage.getItem("slot");
-    const seats = JSON.parse(window.localStorage.getItem("seats"));
+    const seatsData = window.localStorage.getItem("seats");
+    let seats = null;
+    if (seatsData) {
+      try {
+        seats = JSON.parse(seatsData);
+      } catch (error) {
+        console.error("Error parsing seats from localStorage:", error);
+        // Clear corrupted data
+        window.localStorage.removeItem("seats");
+      }
+    }
 
     if(movie){
       changeMovie(movie);

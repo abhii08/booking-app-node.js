@@ -34,7 +34,7 @@ const Home = () => {
   const handleBookNow = () => {
     if (!movie) {
       setErrorPopup(true);
-      setErrorMessage("Please select  a movie!");
+      setErrorMessage("Please select a movie!");
     } else if (!time) {
       setErrorPopup(true);
       setErrorMessage("Please select a time slot!");
