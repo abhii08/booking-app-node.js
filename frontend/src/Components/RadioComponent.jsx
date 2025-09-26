@@ -1,4 +1,3 @@
-import React from "react";
 
 // This is the radio component used for selecting movie and slot.
 const RadioComponent = ({ text, changeSelection, data }) => {
