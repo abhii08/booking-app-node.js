@@ -10,6 +10,13 @@ const SeatsInput = ({
 }) => {
   // changing the seats according to user input
   const change_seats = (e) => {
+    
+
+    if (e.target.value > 30) {
+      e.target.value = 30;
+    } else if (e.target.value < 0) {
+      e.target.value = 0;
+    }
     changeNoOfSeats({ ...noOfSeat, [e.target.name]: Number(e.target.value) });
 
     // setting seats in localStorage
